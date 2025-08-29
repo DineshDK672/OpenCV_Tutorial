@@ -5,10 +5,17 @@ cap = cv2.VideoCapture(0)
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 out = cv2.VideoWriter('output.mp4', fourcc, 40.0, (1920, 1080))
 
+print(cap.get(3))
+print(cap.get(4))
+
 while (cap.isOpened()):
 
     ret, frame = cap.read()
     if ret:
+
+        cap.set(3, 720)  # Code 3 is for width
+        cap.set(4, 480)  # Code 4 is for width
+
         print(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
         print(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
