@@ -24,8 +24,8 @@ while (True):
     img2 = cv.imread("starry_night.jpg")
 
     cv.imshow("Image", img)
-    k = cv.waitKey(1) & 0xFF
-    if k == 27:
+    # k = cv.waitKey(1) & 0xFF
+    if cv.waitKey(1) == ord('q'):
         break
     b = cv.getTrackbarPos("B", "Image")
     g = cv.getTrackbarPos("G", "Image")
